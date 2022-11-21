@@ -5,6 +5,7 @@ __pycache__/
 
 # others (.mp4)
 /back-end/output
+/output
 
 # C extensions
 *.so
