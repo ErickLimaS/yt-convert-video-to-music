@@ -1,3 +1,4 @@
+import shutil
 from flask import Flask, request, send_from_directory, jsonify
 from flask_restful import Api, Resource, reqparse
 from pytube import YouTube
@@ -35,6 +36,7 @@ DIRECTORY = "%s\\output" % os.getcwd()
 #         # returns results of the search
 #         return
 
+
 # receive a video id to be downloaded and converted to mp4
 class DownloadAudioFromVideo(Resource):
 
@@ -46,8 +48,6 @@ class DownloadAudioFromVideo(Resource):
             file_extension='mp4').get_audio_only()
 
         video.download(output_path=DIRECTORY)
-
-        print(video.title)
 
         return send_from_directory(DIRECTORY, "%s.mp4" % video.title, as_attachment=True)
 
