@@ -1,4 +1,3 @@
-import shutil
 from flask import Flask, request, send_from_directory, jsonify
 from flask_restful import Api, Resource, reqparse
 from pytube import YouTube
